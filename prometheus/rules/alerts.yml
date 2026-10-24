@@ -1,0 +1,34 @@
+groups:
+
+  - name: bai8-alerts
+
+    rules:
+
+      - alert: PrometheusTargetDown
+        expr: up == 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Prometheus target đang down"
+          description: "Một target được Prometheus giám sát không phản hồi."
+
+      - alert: WordPressHighCPU
+        expr: rate(container_cpu_usage_seconds_total{container="wp-final-app"}[5m]) * 100 > 80
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "WordPress CPU cao"
+          description: "CPU usage của WordPress > 80% trong 2 phút."
+
+      - alert: WordPressHighMemory
+        expr: container_memory_usage_bytes{container="wp-final-app"} /
+          container_spec_memory_limit_bytes{container="wp-final-app"} * 100 > 85
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "WordPress Memory cao"
+          description: "Memory usage của WordPress vượt 85%."
+

@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: Final Project Monitoring
+    orgId: 1
+    folder: Final Project
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /var/lib/grafana/dashboards

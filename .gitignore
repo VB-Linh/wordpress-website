@@ -1,0 +1,30 @@
+# Environment configuration
+.env
+.env.*
+!.env.example
+
+# Database credentials
+**/.my.cnf
+
+# WordPress runtime data
+wp-content/uploads/
+wp-content/cache/
+
+# Runtime data and logs
+data/
+logs/
+*.log
+
+# Backups and temporary files
+*.backup
+*.bak
+*.save
+*.old
+*.before-*
+docker-compose*.yml.backup
+docker-compose*.yaml.backup
+
+# Editor and operating system files
+*~
+.DS_Store
+Thumbs.db
