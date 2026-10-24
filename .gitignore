@@ -28,3 +28,9 @@ docker-compose*.yaml.backup
 *~
 .DS_Store
 Thumbs.db
+
+# Local SSL certificates and private keys
+/ssl/
+*.pem
+*.key
+*.crt
